@@ -9,7 +9,7 @@ COPY package.json package-lock.json ./
 RUN npm install -g node-gyp
 RUN npm config set fetch-retry-maxtimeout 600000 -g && npm install
 ENV PATH /opt/node_modules/.bin:$PATH
-git remote set-url origin
+
 WORKDIR /opt/app
 COPY . .
 RUN chown -R node:node /opt/app
